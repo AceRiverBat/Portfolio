@@ -14,6 +14,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://kit.fontawesome.com/e6978c7eb1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
     <title>CV</title>
 </head>
 
@@ -157,37 +163,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-5 col-12 col-lg-5">
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1" class="form-label">Adresse Email</label>
-                                <input type="email" class="form-control" id="Email" placeholder="nom@exemple.com"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <label for="form-control" class="form-label">Nom</label>
-                                <input type="text" class="form-control" id="fromName" placeholder="Nom" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="form-control" class="form-label">Prénom</label>
-                                <input class="form-control" type="text" placeholder="Prénom"
-                                    aria-label="default input example">
-                            </div>
-                            <div class="form-group">
-                                <label for="form-control" class="form-label">Sujet</label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisir un sujet</option>
-                                    <option value="1">Informations</option>
-                                    <option value="2">Demande d'entretient</option>
-                                    <option value="3">Autre</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-                            <br>
-                            <button onclick='sendMail()' class="btn btn-dark">Envoyer</button>
-                        </form>
+                        <div id="map">
+                        </div>
                     </div>
                     <div class="col-md-2 col-12 col-lg-2">
                     </div>

@@ -13,3 +13,36 @@ document.addEventListener("DOMContentLoaded", function(){
         } 
     });
 }); 
+//map
+var map = L.map('map').setView([45.764875340199936, 4.832037587266412], 13);
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiYWNlcml2ZXJiYXQiLCJhIjoiY2t5NDRqaWg0MDhhYzJ3cHY3OWxpenB1cCJ9.qfiPMg4HJ5fPATJ1O8uckQ'
+}).addTo(map);
+
+
+var marker = L.marker([45.764875340199936, 4.832037587266412]).addTo(map);
+var circle = L.circle([45.764875340199936, 4.832037587266412], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 1000
+}).addTo(map);
+marker.bindPopup("Mon secteur d'activité").openPopup();
+
+    
+    map.on('click', onMapClick);
+    var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent(e.latlng.toString())
+        .openOn(map);
+}
+
+map.on('click', onMapClick);

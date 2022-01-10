@@ -4,10 +4,10 @@ body{
     margin: 0;
     padding: 0;
 }
-.scrolled{
-    background-color: dodgerblue;
-    transition: 0.3s;
-  }
+#map { 
+    height: 280px; 
+    margin-top: 5em
+}
 h1{
     color: white;
     text-align: center;
